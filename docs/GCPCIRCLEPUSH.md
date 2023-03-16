@@ -6,7 +6,7 @@ In this stage we'll update your CircleCI pipeline to push to your [GCP Container
 
 You'll need to have a container registry ready to push your docker images to. The terraform configuration covered in a [previous session](https://github.com/techreturners/lm-lab-eks-terraform-devopsupskill) provisioned your own Container Registry. You can use this to re-create your container registry.
 
-Alternatively you can create a container registry manually using the AWS console.
+Alternatively you can create a container registry manually using the Google Cloud console.
 
 ### Step 1 - Update config.yml
 
@@ -50,7 +50,7 @@ Finally we have the stage `requires` stage. By default CircleCI will run jobs in
 
 **NOTE:** Don't commit and push your changes just yet until we've configured Circle with access to your GCP account. If you do accidentally commit and push, don't worry the build will just fail at this point. 
 
-### Step 2 - Configure Circle with AWS access
+### Step 2 - Configure Circle with Google Cloud Access
 
 Currently the [gcp-gcr orb](https://circleci.com/developer/orbs/orb/circleci/gcp-gcr) doesn't know how to access your Google cloud account.
 
@@ -76,13 +76,13 @@ Add the following environment variables, entering the name exactly as shown:
 
 Once you have configured your **Environment Variables** it should look similar to the image below:
 
-![CircleCI AWS Environment Variables](./images/circle_aws_env_var.png "CircleCI AWS Environment Variables")
+![CircleCI GCP Environment Variables](./images/circle_aws_env_var.png "CircleCI AWS Environment Variables")
 
 Now the required environment variables are there, let's see if the build pipeline works.
 
 **Commit** and **Push** your changes back to GitHub. CircleCI should automatically spot it and kick into action.....Grab yourself a drink whilst it builds 🙌
 
-### Step 3 - Review build and ECR
+### Step 3 - Review build and Container Registry
 
 After you've had your drink, have a check of the pipeline - did it run sucessfully?
 
@@ -91,7 +91,7 @@ If it didn't have a look at the logs on CircleCI, some likely causes:
 * Incorrect YAML indentation - That pesky YAML needs to be indented correct. Try comparing it with the example file.
 * Missing or incorrect environment variable - Double check your CircleCI environment variables. Have you done them all? Are the name and values all correct?
 
-If your build "went green" have a look at your ECR registry - you should see a brand new Docker image all ready to go 🚀 
+If your build "went green" have a look at your container registry - you should see a brand new Docker image all ready to go 🚀 
 
 In the images below you can see a succesful build in CircleCI, build number XXX which resulted in a Docker image with the tag 1.XXXX
 
