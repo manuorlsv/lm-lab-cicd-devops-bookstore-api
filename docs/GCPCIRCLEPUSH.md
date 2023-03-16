@@ -72,11 +72,9 @@ Add the following environment variables, entering the name exactly as shown:
 | GCLOUD_SERVICE_KEY       | In a past session you will have created a service account and downloaded the JSON file that holds the credentials for that service account. For example your  **lm-lab-gke-gitops-devopsupskill** repository should contain a file called service-account.json. Copy the contents of that value and paste it into the text box for the environment variable.     |
 | GOOGLE_PROJECT_ID      | Enter the Google project Id as the value      |
 
-![AWS ECR URL](./images/aws_ecr_url.png "AWS ECR URL")
-
 Once you have configured your **Environment Variables** it should look similar to the image below:
 
-![CircleCI GCP Environment Variables](./images/circle_aws_env_var.png "CircleCI AWS Environment Variables")
+![CircleCI GCP Environment Variables](./images/circle_gcp_env_var.png "CircleCI GCP Environment Variables")
 
 Now the required environment variables are there, let's see if the build pipeline works.
 
@@ -95,9 +93,9 @@ If your build "went green" have a look at your container registry - you should s
 
 In the images below you can see a succesful build in CircleCI, build number XXX which resulted in a Docker image with the tag 1.XXXX
 
-![CircleCI Build Number](./images/circle_build_number_ecr.png "CircleCI Build Number")
+![CircleCI Build Number](./images/circle_build_number_gcp.png "CircleCI Build Number")
 
-![AWS Docker image tagged](./images/awc_ecr_image_tag.png "AWS Docker image tagged")
+![GCR Docker image tagged](./images/gcp_gcr_image_tag.png "GCR Docker image tagged")
 
 ### Step 4 - You did it!
 
