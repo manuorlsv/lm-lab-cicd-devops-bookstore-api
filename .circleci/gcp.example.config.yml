@@ -13,7 +13,7 @@ workflows:
           test-tool: unittest 
       - gcp-gcr/build-and-push-image:
           image: devops-bookstore-api
-          registry-url: us.gcr.io
+          registry-url: eu.gcr.io
           tag: '1.$CIRCLE_BUILD_NUM'
           requires:
             - "python/test"
