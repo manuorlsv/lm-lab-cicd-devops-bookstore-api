@@ -38,6 +38,6 @@ The next phase is Cloud provider specific. Here you'll update your pipeline to p
 
 For AWS, head over to the [AWS and Circle instructions](./docs/AWSCIRCLEPUSH.md)
 
-For Google Cloud, head over to the GCP and Circle instructions (Coming soon...)
+For Google Cloud, head over to the [GCP and Circle instructions](./docs/GCPCIRCLEPUSH.md)
 
 For Azure, head over to the [Azure and Circle instructions](./docs/AZURECIRCLEPUSH.md)
